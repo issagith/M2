@@ -1,3 +1,3 @@
-# Master 2 
+# Master 2
 
-Repo qui contient tous mes TPs et projets associés aux différents cours réalisés pendant mon M2 au master MS2A. 
+Repo contenant tous mes TPs et projets réalisés dans le cadre des différents cours du Master 2 MS2A.
