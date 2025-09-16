@@ -1,0 +1,4 @@
+[submodule "data_science_practice/class_repo"]
+	path = data_science_practice/class_repo
+	url = https://github.com/racousin/data_science_practice_2025.git
+	branch = main
