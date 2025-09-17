@@ -1,0 +1,43 @@
+name : Format Markdown 
+
+on: 
+  push:
+    paths: 
+      - 'data_science_practice/1_git_&github/1_git_&github/**.md'
+
+jobs : 
+  format:
+    runs-on : ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Count Markdown files
+      run: |
+        count = $(find data_science_practice/1_git_&github/ -name "*.md" | wc -l)
+        echo "Found $count Markdown files."
+
+    - name: Check Markdown structure
+      run : |
+        echo "Checking Markdown files for basic structure..."
+        for file in $(find . -name "*.md" -type f); do
+          echo "Checking $file"
+          if grep -q "^# " "$file"; then
+            echo "$file has a main heading"
+          else
+            echo "$file missing main heading"
+          fi
+        done
+
+    - name: Generate Table of contents
+      run : |
+        echo "Generating Table of Contents for Markdown files..."
+        echo "## Repo Structure " > TOC.md
+        echo "" >> TOC.md
+        echo "### Markdown Files: " >> TOC.md
+        find data_science_practice/1_git_&github/ -name "*.md" -type f | while read file; do
+          echo "- $file" >> TOC.md
+        done
+        cat TOC.md
+        mv TOC.md data_science_practice/1_git_&github/TOC.md
+        
