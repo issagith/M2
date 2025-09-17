@@ -11,6 +11,8 @@ jobs :
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Count Markdown files
       run: |
@@ -41,3 +43,17 @@ jobs :
         done
         cat TOC.md
         mv TOC.md "data_science_practice/1_git_&github/TOC.md"
+
+    - name: Commit TOC if changed
+      run: |
+        set -euo pipefail
+        repo_dir="data_science_practice/1_git_&github"
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add "$repo_dir/TOC.md"
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update TOC.md [ci skip]"
+          git push origin HEAD
+        fi
