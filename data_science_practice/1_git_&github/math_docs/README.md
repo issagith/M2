@@ -1,3 +1,4 @@
+![Documentation Check](https://github.com/issagith/M2/actions/workflows/check-maths-docs.yml/badge.svg)
 # Mathematics Library Documentation
 
 ## 1. Basic Arithmetic
