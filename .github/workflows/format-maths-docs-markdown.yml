@@ -3,7 +3,7 @@ name : Format Markdown
 on: 
   push:
     paths: 
-      - 'data_science_practice/1_git_&github/1_git_&github/**.md'
+      - 'data_science_practice/1_git_&github/**.md'
 
 jobs : 
   format:
@@ -40,4 +40,3 @@ jobs :
         done
         cat TOC.md
         mv TOC.md data_science_practice/1_git_&github/TOC.md
-        
