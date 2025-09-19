@@ -1,10 +1,15 @@
 name: Mathtools Tests
 
-on: [push, pull_request]
-  paths: 
-    - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools/**'
-    - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/tests/**'
-
+on: 
+  push: 
+    paths: 
+      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools/**'
+      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/tests/**'
+  pull_request:
+    paths: 
+      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools/**'
+      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/tests/**'
+      
 jobs:
   test:
     runs-on: ubuntu-latest
