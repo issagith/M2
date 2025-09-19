@@ -3,13 +3,13 @@ name: Mathtools Tests
 on: 
   push: 
     paths: 
-      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools/**'
-      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/tests/**'
+      - 'data_science_practice/2_python_environment/**'
+      - 'data_science_practice/2_python_environment/**'
   pull_request:
     paths: 
-      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools/**'
-      - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/tests/**'
-      
+      - 'data_science_practice/2_python_environment/**'
+      - 'data_science_practice/2_python_environment/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest
