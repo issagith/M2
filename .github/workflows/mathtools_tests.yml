@@ -1,0 +1,23 @@
+name: Mathtools Tests
+
+on: [push, pull_request]
+  paths: 
+    - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools/**'
+    - 'data_science_practice/2_python_environment/2_unit_tests_%26_CI/tests/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+    - name: Install package
+      run: |
+        cd data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools
+        pip install -e .[test]
+    - name: Run tests
+      run: |
+        cd data_science_practice/2_python_environment/2_unit_tests_%26_CI/mathtools
+        pytest tests/ -v
